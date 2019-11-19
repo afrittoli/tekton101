@@ -57,9 +57,9 @@
 \section{A Bit of History}
 
 \begin{lblackrwhiteframe}
-  \frametitle{Knative}
+  \frametitle{Knative Build}
   \large
-  \begin{beamercolorbox}[wd=0.3\paperwidth]{text}
+  \begin{beamercolorbox}[wd=0.4\paperwidth]{text}
     \begin{itemize}
       \item Beginning of 2018...
       \item Knative:
@@ -68,17 +68,16 @@
         \item Eventing
         \item Serving
       \end{itemize}
+      \item ~Setpt 2018...
+      \item Knative Pipelines
     \end{itemize}
     \begin{itemize}
       \item OpenSource
       \item Contributors:
       \begin{itemize}
-        \item Google
-        \item Pivotal
-        \item IBM
-        \item RedHat
-        \item Cloudbees
-        \item ...and others
+        \item[] Google, RedHat, IBM
+        \item[] Cloudbees, Pivotal
+        \item[] ...and others
       \end{itemize}
     \end{itemize}
   \end{beamercolorbox}%
@@ -88,45 +87,14 @@
   \end{textblock*}
 \end{grayframe}
 
-\begin{grayframe}
-  \frametitle{Community}
-  \begin{itemize}
-    \item Steering Commitee (SC)
-    \item Technical Oversight Commitee (TOC)
-    \item Dedicated Working Groups (WG)
-    \item Various Contribution profiles
-    \item Design, issues: on GitHub
-    \item Communication:
-    \begin{itemize}
-      \item WG periodic meetings, recorded
-      \item Asynch: Knative Users / Developers ML
-      \item Sync: slack.knative.dev
-    \end{itemize}
-  \end{itemize}
-\end{grayframe}
-
-\begin{tblackbgrayframe}
-  \frametitle{Going further}
-  \begin{textblock*}{0.75\paperwidth}(0.15\paperwidth,0.25\paperheight)
-    \includegraphics[width=0.75\paperwidth]{img/test-pipeline.png}
-  \end{textblock*}
-\end{tblackbgrayframe}
-
-\begin{blackframe}
-  \frametitle{\textasciitilde Sept 2018: Knative Pipelines}
-  \begin{textblock*}{\paperwidth}(0cm,0.2\paperheight)
-    \includegraphics[width=\paperwidth]{img/pipeline_cc0.jpg}
-    % https://mediad.publicbroadcasting.net/p/shared/npr/styles/placed_wide/nprshared/201804/605180710.jpg
-  \end{textblock*}
-  \begin{textblock*}{0.2\paperwidth}(0.83\paperwidth,0.93\paperheight)
-    \includegraphics[width=0.03\paperwidth]{img/cc.png}
-    \includegraphics[width=0.03\paperwidth]{img/zero.png}
-  \end{textblock*}
-\end{blackframe}
-
-\begin{lblackrwhiteframe}
-  \frametitle{Latest news!}
+\begin{lwhiterblackframe}
+  \frametitle{From Knative to Tekton}
   \large
+  \begin{textblock*}{0.5\paperwidth}(0.5\paperwidth,0.25\paperheight)
+    \centering
+    \includegraphics[width=0.35\paperwidth]{img/tekton-horizontal-color.png}
+    \includegraphics[width=0.20\paperwidth]{img/cdf-color.png}
+  \end{textblock*}
   \begin{beamercolorbox}[wd=0.35\paperwidth]{text}
     \begin{itemize}
       \item Tekton pipelines (March 2019)
@@ -135,16 +103,29 @@
       \item Deploy ``anywhere''
       \item Replaces Knative Build (June 2019)
       \item Bootstrap governance
+      \item Build deprecated in Knative
     \end{itemize}
   \end{beamercolorbox}%
-  \begin{textblock*}{0.5\paperwidth}(0.5\paperwidth,0.25\paperheight)
-    \centering
-    \includegraphics[width=0.35\paperwidth]{img/tekton-horizontal-color.png}
-    \includegraphics[width=0.20\paperwidth]{img/cdf-color.png}
-  \end{textblock*}
 \end{lblackrwhiteframe}
 
+% \begin{blackframe}
+%   \frametitle{\textasciitilde Sept 2018: Knative Pipelines}
+%   \begin{textblock*}{\paperwidth}(0cm,0.2\paperheight)
+%     \includegraphics[width=\paperwidth]{img/pipeline_cc0.jpg}
+%     % https://mediad.publicbroadcasting.net/p/shared/npr/styles/placed_wide/nprshared/201804/605180710.jpg
+%   \end{textblock*}
+%   \begin{textblock*}{0.2\paperwidth}(0.83\paperwidth,0.93\paperheight)
+%     \includegraphics[width=0.03\paperwidth]{img/cc.png}
+%     \includegraphics[width=0.03\paperwidth]{img/zero.png}
+%   \end{textblock*}
+% \end{blackframe}
+
 \section{Tekton Pipelines}
+
+\begin{fullscreenslide}
+{img/overview.png}
+\end{fullscreenslide}
+
 
 \begin{blackframe}
   \frametitle{Cloud Native Pipelines}
@@ -180,91 +161,88 @@
   \frametitle{Sample pipeline}
 \end{2columnsframe}
 
-\begin{2columnsframe}
-  {
-  {\tiny Source to Image (spec only): \\}
-  \lstinputlisting[language=koyaml,firstline=6,lastline=31]{code/task-source-to-image.yaml}
-  }
-  {
-  \lstinputlisting[language=koyaml,firstline=32,lastline=55]{code/task-source-to-image.yaml}
-  % {\tiny Cache Warmer (spec only): \\}
-  % \lstinputlisting[language=koyaml,firstline=21,lastline=35]{code/task-kaniko-cache.yaml}
-  }
-  \frametitle{Sample Task: Source to Image}
-\end{2columnsframe}
+% \begin{2columnsframe}
+%   {
+%   {\tiny Source to Image (spec only): \\}
+%   \lstinputlisting[language=koyaml,firstline=6,lastline=31]{code/task-source-to-image.yaml}
+%   }
+%   {
+%   \lstinputlisting[language=koyaml,firstline=32,lastline=55]{code/task-source-to-image.yaml}
+%   % {\tiny Cache Warmer (spec only): \\}
+%   % \lstinputlisting[language=koyaml,firstline=21,lastline=35]{code/task-kaniko-cache.yaml}
+%   }
+%   \frametitle{Sample Task: Source to Image}
+% \end{2columnsframe}
 
-\begin{2columnsframe}
-  {
-  \begin{itemize}
-    \item Pipeline and Tasks:
-    \begin{itemize}
-      \item Static definition, stored in git
-    \end{itemize}
-    \item PipelineRuns and TaskRuns:
-    \begin{itemize}
-      \item Specific to one execution
-      \item Generated programmatically
-    \end{itemize}
-    \item Parameters and Resources:
-    \begin{itemize}
-      \item Env / run specific
-    \end{itemize}
-  \end{itemize}
-  \vspace{0.3ex}
-  \lstinputlisting[language=koyaml]{code/resource-git.yaml}
-  }
-  {
-  \lstinputlisting[language=koyaml]{code/resource-cluster.yaml}
-  \vspace{0.3ex}
-  \lstinputlisting[language=koyaml]{code/resource-image.yaml}
-  }
-  \frametitle{Pipeline as code}
-\end{2columnsframe}
+% \begin{2columnsframe}
+%   {
+%   \begin{itemize}
+%     \item Pipeline and Tasks:
+%     \begin{itemize}
+%       \item Static definition, stored in git
+%     \end{itemize}
+%     \item PipelineRuns and TaskRuns:
+%     \begin{itemize}
+%       \item Specific to one execution
+%       \item Generated programmatically
+%     \end{itemize}
+%     \item Parameters and Resources:
+%     \begin{itemize}
+%       \item Env / run specific
+%     \end{itemize}
+%   \end{itemize}
+%   \vspace{0.3ex}
+%   \lstinputlisting[language=koyaml]{code/resource-git.yaml}
+%   }
+%   {
+%   \lstinputlisting[language=koyaml]{code/resource-cluster.yaml}
+%   \vspace{0.3ex}
+%   \lstinputlisting[language=koyaml]{code/resource-image.yaml}
+%   }
+%   \frametitle{Pipeline as code}
+% \end{2columnsframe}
 
 \section{Tekton Projects}
 
-\begin{2columnsframe}
+\begin{2columnsmoreleftframe}
   {
   \begin{itemize}
-    \item Pipeline
-    \item Dashboard
-    \item CLI
-    \item Catalog
-    \item Trigger
-    \item Plumbing
+    \item tektoncd/pipeline — core
+    \item tektoncd/catalog — shareable task definition
+    \item tektoncd/cli — command-line to interact with pipeline
+    \item tektoncd/triggers — create tekton resources in reaction of events
+    \item tektoncd/operator — install/upgrade you tekton
+    \item tektoncd/dashboard — web ui for tekton
+    \item[]
+    \item Plumbing, Community, Website (https://tekton.dev/), Friends
   \end{itemize}
   }
   {
-  \begin{itemize}
-    \item Operator
-    \item Community
-    \item Friends
-    \item Website (https://tekton.dev/)
-  \end{itemize}
+  % \begin{itemize}
+  %   \item Plumbing
+  %   \item Community
+  %   \item Friends
+  %   \item Website (https://tekton.dev/)
+  % \end{itemize}
+  \begin{textblock*}{0.25\paperwidth}(0.70\paperwidth,0.40\paperheight)
+    \centering
+    \includegraphics[width=0.25\paperwidth]{img/tekton-friends.png}
+  \end{textblock*}
   }
-  \frametitle{All Tekton projects}
-\end{2columnsframe}
+  \frametitle{Tekton projects}
+\end{2columnsmoreleftframe}
+
+\begin{centraldark}{Thank You!}\end{centraldark}
 
 \begin{grayframe}
   \frametitle{References}
   \begin{itemize}
-    \item This Talk: https://github.com/afrittoli/tekton\_pipelines\_knative\_intro/tree/oss-jp-2019
-    \item Tekton Links:
+    \item This Talk: https://github.com/afrittoli//github.com/afrittoli/tekton101/tree/kubecon-na-2019
+    \item Tekton Links:§
     \begin{itemize}
       \item https://tekton.dev/, https://cd.foundation/
       \item https://github.com/tektoncd/pipeline
-      \item https://github.com/tektoncd/pipeline
-      \item https://github.com/tektoncd/pipeline/blob/master/api\_compatibility\_policy.md
       \item https://github.com/tektoncd/pipeline/blob/master/roadmap-2019.md
-    \end{itemize}
-    \item Knative Community: https://github.com/knative/docs/tree/master/community
-    \item Kaniko: https://github.com/GoogleContainerTools/kaniko
-    \item Source code and my blog:
-    \begin{itemize}
-      \item https://github.com/afrittoli/health-helm/tree/knative
-      \item https://github.com/afrittoli/openstack-health/tree/knative-eventing
-      \item https://github.com/afrittoli/github\_tekton\_glue
-      \item https://andreafrittoli.me
     \end{itemize}
     \item IBM Cloud: https://cloud.ibm.com
   \end{itemize}

@@ -88,6 +88,30 @@
   \end{frame}
 }
 
+\newenvironment{lwhiterblackframe}
+{
+  \setbeamercolor{background canvas}{bg=ibmblack}
+  \setbeamercolor*{footline}{fg=ibmblack}
+  \setbeamercolor{title}{fg=ibmblack}
+  \setbeamercolor{normal text}{fg=ibmblack}
+  \setbeamercolor{frametitle}{fg=ibmblack}
+  \setbeamercolor{itemize item}{fg=ibmblack}
+  \setbeamercolor{item}{fg=ibmblack}
+  \setbeamercolor{subitem}{fg=ibmblack}
+  \setbeamercolor{block body}{fg=ibmblack}
+  \usebeamercolor[fg]{normal text}
+  \setbeamertemplate{background}{
+  		\begin{tikzpicture}
+  			\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  			\fill[color=white] (0, 0) rectangle (0.5\paperwidth, \the\paperheight);
+  		\end{tikzpicture}
+  	}
+  \begin{frame}[t]
+}
+{
+  \end{frame}
+}
+
 \newenvironment{2columnsframe}[2]
 {
   \begin{frame}[t]
@@ -96,6 +120,21 @@
       \column{0.5\textwidth}
         #1
       \column{0.5\textwidth}
+        #2
+    \end{columns}
+}
+{
+  \end{frame}
+}
+
+\newenvironment{2columnsmoreleftframe}[2]
+{
+  \begin{frame}[t]
+    \vspace{5pt}
+    \begin{columns}[T,totalwidth=\textwidth]
+      \column{0.7\textwidth}
+        #1
+      \column{0.3\textwidth}
         #2
     \end{columns}
 }
@@ -159,6 +198,40 @@
   		\end{tikzpicture}
   	}
   \begin{frame}[t]
+}
+{
+  \end{frame}
+}
+
+\newenvironment{centraldark}[1]
+{
+  \setbeamertemplate{background canvas}{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node [rectangle, left color=ibmblack, right color=ibmdarkblue, anchor=north, minimum width=\paperwidth, minimum height=\paperheight] (box) at (current page.north){};
+    \end{tikzpicture}%
+  }
+  \setbeamercolor*{footline}{fg=white}
+  \setbeamercolor*{section name}{fg=white}
+  \setbeamercolor*{section title}{fg=white}
+  \setbeamercolor*{frametitle}{fg=white}
+  \begin{frame}[plain]
+    \begin{textblock*}{\paperwidth}(0.32cm,0.40\paperheight)
+      \begin{beamercolorbox}[wd=0.98\paperwidth]{title page header}
+        \begin{centering}
+        \usebeamerfont{title}\Huge#1\par%
+        \end{centering}
+      \end{beamercolorbox}%
+    \end{textblock*}%
+}
+{
+  \end{frame}
+}
+
+\newenvironment{fullscreenslide}[1]
+{
+  \usebackgroundtemplate{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{#1}}
+  \begin{frame}
 }
 {
   \end{frame}
